@@ -1,5 +1,4 @@
-import ProjectCard from '../../components/ProjectCard'
-import { ArrowLeft, Filter, Search } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
 const allProjects = [
@@ -97,7 +96,6 @@ const allProjects = [
   }
 ]
 
-const categories = ['Todos', 'Enterprise', 'Government', 'Web Application']
 
 export default function Projects() {
   return (
@@ -150,11 +148,12 @@ export default function Projects() {
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
                 {/* Project Image */}
                 <div className="h-48 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-contain"
-                  />
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div 
+                      className="w-full h-full bg-contain bg-center bg-no-repeat"
+                      style={{ backgroundImage: `url(${project.image})` }}
+                    />
+                  </div>
                 </div>
                 
                 {/* Content */}

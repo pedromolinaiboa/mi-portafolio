@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Github, Linkedin, Mail, BicepsFlexed } from 'lucide-react'
 
 export default function Footer() {
@@ -10,12 +9,6 @@ export default function Footer() {
     { icon: Mail, href: 'mailto:tu-email@example.com', label: 'Email' }
   ]
 
-  const quickLinks = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Sobre mí', href: '/about' },
-    { name: 'Proyectos', href: '/projects' },
-    { name: 'Contacto', href: '/contact' },
-  ]
 
   return (
     <footer className="bg-gray-900 text-white">

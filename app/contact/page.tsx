@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Github, Linkedin, Send, Clock, ArrowLeft } from 'lucide-react'
+import { Mail, MapPin, Github, Linkedin, Send, Clock, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Contact() {

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Calendar, MapPin, GraduationCap, Briefcase, Code, Database } from 'lucide-react'
+import { Calendar, MapPin, GraduationCap, Briefcase, Code } from 'lucide-react'
 
 export default function About() {
   return (
