@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gradientes gubernamentales -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="documentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F9FAFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo circular con borde gubernamental -->
+  <circle cx="100" cy="100" r="95" fill="#F8FAFC" stroke="#1E40AF" stroke-width="3"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Escudo gubernamental de fondo -->
+  <g transform="translate(100, 100)">
+    <path d="M0,-70 C-25,-70 -40,-55 -40,-30 L-40,20 C-40,45 -20,60 0,70 C20,60 40,45 40,20 L40,-30 C40,-55 25,-70 0,-70 Z" 
+          fill="url(#shieldGradient)" opacity="0.15"/>
+  </g>
+  
+  <!-- Documentos principales -->
+  <g transform="translate(50, 65)">
+    <!-- Documento de tenencia -->
+    <rect x="0" y="0" width="42" height="55" fill="url(#documentGradient)" stroke="#D1D5DB" stroke-width="1.5" rx="4"/>
+    <!-- Header del documento -->
+    <rect x="4" y="4" width="34" height="10" fill="#1E40AF" rx="2"/>
+    <text x="21" y="11" text-anchor="middle" fill="white" font-family="Arial" font-size="7" font-weight="bold">TENENCIA</text>
+    
+    <!-- Líneas de texto -->
+    <rect x="6" y="20" width="30" height="2.5" fill="#6B7280" rx="1"/>
+    <rect x="6" y="25" width="24" height="2.5" fill="#9CA3AF" rx="1"/>
+    <rect x="6" y="30" width="26" height="2.5" fill="#9CA3AF" rx="1"/>
+    
+    <!-- Sección de información -->
+    <rect x="6" y="38" width="30" height="12" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5" rx="2"/>
+    <rect x="8" y="42" width="26" height="2" fill="#9CA3AF" rx="1"/>
+    <rect x="8" y="46" width="20" height="2" fill="#9CA3AF" rx="1"/>
+  </g>
+  
+  <!-- Segundo documento (validación) -->
+  <g transform="translate(108, 75)">
+    <rect x="0" y="0" width="38" height="48" fill="url(#documentGradient)" stroke="#D1D5DB" stroke-width="1.5" rx="4"/>
+    <!-- Header de validación -->
+    <rect x="3" y="3" width="32" height="9" fill="#059669" rx="2"/>
+    <text x="19" y="9.5" text-anchor="middle" fill="white" font-family="Arial" font-size="6" font-weight="bold">VALIDADO</text>
+    
+    <!-- Sello de validación -->
+    <circle cx="19" cy="26" r="10" fill="none" stroke="#059669" stroke-width="2.5"/>
+    <path d="M14,26 L18,30 L24,22" stroke="#059669" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Líneas de validación -->
+    <rect x="5" y="40" width="28" height="2" fill="#6B7280" rx="1"/>
+    <rect x="5" y="44" width="22" height="2" fill="#9CA3AF" rx="1"/>
+  </g>
+  
+  <!-- Elementos de validación -->
+  <!-- Check mark principal -->
+  <g transform="translate(160, 55)">
+    <circle cx="0" cy="0" r="15" fill="#059669"/>
+    <path d="M-7,-1 L-3,4 L8,-8" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Elementos gubernamentales -->
+  <!-- Águila estilizada -->
+  <g transform="translate(30, 40)" opacity="0.4">
+    <path d="M0,0 C-4,-3 -5,3 -2,5 C0,4 3,4 5,5 C8,3 7,-3 3,0 C1.5,-1.5 -1.5,-1.5 0,0 Z" fill="#1E40AF" transform="scale(1.2)"/>
+  </g>
+  
+  <!-- Sello oficial -->
+  <g transform="translate(40, 150)">
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#1E40AF" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#1E40AF" stroke-width="1.5" opacity="0.7"/>
+    <text x="0" y="3" text-anchor="middle" fill="#1E40AF" font-family="Arial" font-size="8" font-weight="bold" opacity="0.7">★</text>
+  </g>
+  
+  <!-- Segundo sello oficial -->
+  <g transform="translate(160, 150)">
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#1E40AF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#1E40AF" stroke-width="1" opacity="0.6"/>
+    <text x="0" y="2" text-anchor="middle" fill="#1E40AF" font-family="Arial" font-size="6" font-weight="bold" opacity="0.6">★</text>
+  </g>
+  
+  <!-- Líneas de conexión -->
+  <g stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="3,3">
+    <path d="M92,95 L108,100"/>
+    <path d="M125,110 L145,115"/>
+    <path d="M75,125 L95,130"/>
+  </g>
+</svg>

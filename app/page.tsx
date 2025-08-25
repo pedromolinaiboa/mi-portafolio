@@ -1,103 +1,115 @@
-import Image from "next/image";
+import Hero from '../components/Hero'
+import ProjectCard from '../components/ProjectCard'
+import Skills from '../components/Skills'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+
+// Proyectos basados en la experiencia profesional de Pedro Molina Iboa
+const featuredProjects = [
+  {
+    id: 1,
+    title: 'Sistema de Gestión de Paquetería',
+    description: 'Plataforma completa para empresas de mensajería y paquetería que automatiza todo el ciclo operativo desde la recepción hasta la entrega final. El sistema integra un módulo de facturación electrónica con certificación fiscal (CFDI), permitiendo la generación automática de comprobantes fiscales digitales y su timbrado en tiempo real.',
+    image: '/images/projects/paqueteria.svg',
+    technologies: ['C#, Vb.net', 'SQL Server', 'Visual Studio', '.NET Framework','https://korarastreo.azurewebsites.net/'],
+    slug: 'sistema-paqueteria',
+    github: '#',
+    demo: '#'
+  },
+  {
+    id: 2,
+    title: 'Sistema de Control de Turnos - Gobierno del Estado de Nayarit',
+    description: 'Sistema especializado para la gestión eficiente de turnos y atención ciudadana en las oficinas de recaudación de rentas. Diseñado para optimizar los tiempos de espera y mejorar la experiencia del usuario en trámites vehiculares.',
+    image: '/images/projects/recaudacion.svg',
+    technologies: ['C#, Vb.net', 'SQL Server', 'Visual Studio', '.NET Framework'],
+    slug: 'sistema-recaudacion',
+    github: '#',
+    demo: '#'
+  },
+  {
+    id: 3,
+    title: 'Sistema de Control de Validaciones - Gobierno del Estado de Nayarit',
+    image: '/images/projects/tenencias-validator.svg',
+    technologies: ['Vb.Net', 'SQL Server', 'React', 'Js' , 'validaciones.nayarit.gob.mx'],
+    slug: '#',
+    github: '#',
+    demo: '#'
+  },
+  {
+    id: 4,
+    title: 'Sistema de Cotizaciones Paquetería - Cotizador Digital de Envíos',
+    description: 'Sistema que calcula automáticamente costos basándose en dimensiones, peso, destino y tipo de servicio, proporcionando presupuestos precisos en tiempo real',
+    image: '/images/projects/shipping-calculator.svg',
+    technologies: ['NextJs','https://kora-express-cotizador.vercel.app/'],
+    slug: '#',
+    github: '#',
+    demo: '#'
+  }
+  
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Hero Section */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Featured Projects Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Proyectos Destacados</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Aquí están algunos de mis proyectos más recientes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Ver todos los proyectos
+              <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Habilidades Técnicas</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Tecnologías y herramientas con las que trabajo diariamente
+            </p>
+          </div>
+          <Skills />
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-4">¿Tienes un proyecto en mente?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Me encantaría escuchar sobre tu proyecto y cómo puedo ayudarte a hacerlo realidad.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+          >
+            Hablemos
+          </Link>
+        </div>
+      </section>
+    </>
+  )
 }
